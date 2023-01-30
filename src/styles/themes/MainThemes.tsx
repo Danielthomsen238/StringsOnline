@@ -11,6 +11,7 @@ export const theme: DefaultTheme = {
     grey: "#AFAFAF",
     darkgrey: "#393939",
     interaction: "#00F9B6",
+    border: "#1F5E5B",
   },
   breakpoints: {
     xs: "320px",

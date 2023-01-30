@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle<Global>`
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Titillium Web', sans-serif
     
 }
 html, body {
@@ -25,6 +26,8 @@ html, body {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
     gap: 5px;
-    background-color: ${(props) => props.theme.colors.background}
+    background-color: ${(props) => props.theme.colors.background};
+
+   
 }
 `;

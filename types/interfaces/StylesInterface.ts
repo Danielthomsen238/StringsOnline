@@ -10,6 +10,7 @@ export interface Global {
       grey: string;
       darkgrey: string;
       interaction: string;
+      border: string;
     };
     breakpoints: {
       xs: string;
@@ -37,6 +38,7 @@ export interface DefaultTheme {
     grey: string;
     darkgrey: string;
     interaction: string;
+    border: string;
   };
   breakpoints: {
     xs: string;

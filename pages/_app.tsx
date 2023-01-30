@@ -4,6 +4,8 @@ import { GlobalStyles } from "../src/styles/Global";
 import { theme } from "../src/styles/themes/MainThemes";
 import { ThemeProvider } from "styled-components";
 import "../src/styles/Globalstyles.css";
+import { Navbar } from "../components/Navbar";
+import StyledMain from "../components/StyledMain";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -15,7 +17,10 @@ const App = ({ Component, pageProps }: AppProps) => {
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <Component {...pageProps} />
+        <Navbar />
+        <StyledMain>
+          <Component {...pageProps} />
+        </StyledMain>
       </ThemeProvider>
     </>
   );
