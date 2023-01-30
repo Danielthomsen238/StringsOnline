@@ -1,7 +1,9 @@
+import { StyledPrimary } from "../src/styles/Primary/StyledPrimary";
+
 const Home = () => {
   return (
     <>
-      <h1>Hello from next</h1>
+      <StyledPrimary></StyledPrimary>
     </>
   );
 };
