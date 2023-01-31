@@ -26,14 +26,13 @@ const Navbar = () => {
       linkPath.shift();
 
       const pathArray = linkPath.map((path, i) => {
-        return { breadcrumb: path, href: "/" + linkPath.slice(0, i + 1).join("/") };
+        return { breadcrumb: path.replace(/_/g, " "), href: "/" + linkPath.slice(0, i + 1).join("/") };
       });
 
       setBreadcrumbs(pathArray);
     }
   }, [router]);
 
-  console.log(toggle);
   return (
     <>
       <div>

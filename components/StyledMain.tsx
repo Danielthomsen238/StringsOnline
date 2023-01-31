@@ -34,19 +34,18 @@ const StyledMain = ({ children }: any) => {
                       setShowCategorie(parentItem.id);
                     }}
                   >
-                    <Link className={active == parentItem.title ? "activ" : ""} href={`/${parentItem.title.toLocaleLowerCase()}`}>
+                    <Link className={active == parentItem.title ? "activ" : ""} href={`/${parentItem.title.replace(/ /g, "_").toLocaleLowerCase()}`}>
                       {parentItem.title}
                     </Link>
                   </li>
                   {showCategorie == parentItem.id ? (
                     <ul>
                       {categories[idx].subgroups.map((item, idx) => {
-                        console.log(item.title);
                         return (
                           <li key={item.title} onClick={() => setActive(item.title)} className={active == item.title ? "activ" : ""}>
                             <Link
                               className={active == item.title ? "activ" : ""}
-                              href={`/${parentItem.title.toLocaleLowerCase()}/${item.title.toLocaleLowerCase()}`}
+                              href={`/${parentItem.title.replace(/ /g, "_").toLocaleLowerCase()}/${item.title.replace(/ /g, "_").toLocaleLowerCase()}`}
                             >
                               {item.title}
                             </Link>

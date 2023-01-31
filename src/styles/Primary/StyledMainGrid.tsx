@@ -5,7 +5,7 @@ const StyledMainGrid = styled.div`
   margin: 0 auto;
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: auto;
   gap: 5px;
   grid-template-areas: "A B";
 

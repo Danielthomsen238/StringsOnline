@@ -6,6 +6,7 @@ import { ThemeProvider } from "styled-components";
 import "../src/styles/Globalstyles.css";
 import { Navbar } from "../components/Navbar";
 import StyledMain from "../components/StyledMain";
+import Footer from "../components/Footer";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -21,6 +22,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <StyledMain>
           <Component {...pageProps} />
         </StyledMain>
+        <Footer />
       </ThemeProvider>
     </>
   );
