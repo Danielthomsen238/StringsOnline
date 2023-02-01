@@ -4,6 +4,7 @@ import Link from "next/link";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { useSearch, StoreState } from "../helpers/useSearch";
 
 interface Breadcrumbs {
   breadcrumb: string;
@@ -16,6 +17,7 @@ const convertBreadcrumb = (string: any) => {
 };
 
 const Navbar = () => {
+  const { searchString, setSearchString } = useSearch() as StoreState;
   const { toggle, switchToggle } = useSwitch();
   const router = useRouter();
   const [breadcrumbs, setBreadcrumbs] = useState<Breadcrumbs[]>();
@@ -32,7 +34,7 @@ const Navbar = () => {
       setBreadcrumbs(pathArray);
     }
   }, [router]);
-
+  console.log(searchString);
   return (
     <>
       <div>
@@ -64,8 +66,8 @@ const Navbar = () => {
               </div>
             </div>
             <div className="search">
-              <input type="text" placeholder="Indtast søgeord" />
-              <button>
+              <input type="text" placeholder="Indtast søgeord" value={searchString} onChange={(event) => setSearchString(event.target.value)} />
+              <button onClick={() => router.push("/")}>
                 <ArrowForwardIcon />
               </button>
             </div>

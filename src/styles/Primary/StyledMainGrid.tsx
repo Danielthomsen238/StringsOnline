@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 const StyledMainGrid = styled.div`
-  width: 90vw;
+  padding-top: 30px;
+  width: 91vw;
   margin: 0 auto;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto;
-  gap: 5px;
+  gap: 15px;
   grid-template-areas: "A B";
 
   > :nth-child(1) {

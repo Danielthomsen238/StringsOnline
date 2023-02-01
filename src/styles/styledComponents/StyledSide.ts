@@ -5,8 +5,10 @@ const StyledSide = styled.aside`
   height: fit-content;
   color: ${(props) => props.theme.colors.interaction};
   border: solid 1px ${(props) => props.theme.colors.border};
+  padding: 10px 20px;
   ul {
     li {
+      cursor: pointer;
       a {
         color: ${(props) => props.theme.colors.interaction};
       }

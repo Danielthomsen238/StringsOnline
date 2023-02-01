@@ -189,11 +189,13 @@ const StyledNav = styled.nav<NavProps>`
 
 const StyledBreadcrumbs = styled.div`
   width: 90vw;
-  height: 1.8vw;
+  height: 3vw;
   margin: 0 auto;
   display: flex;
   align-items: center;
   gap: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-top: solid 1px ${(props) => props.theme.colors.darkgrey};
   border-bottom: solid 1px ${(props) => props.theme.colors.darkgrey};
   a {
