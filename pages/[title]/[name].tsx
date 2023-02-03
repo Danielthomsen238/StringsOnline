@@ -2,6 +2,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import StyledListItems from "../../components/StyledListItem";
+import { addToCart } from "../../helpers/cart";
 import { StyledList } from "../../src/styles/styledComponents/StyledList";
 
 const BasserSubItem = () => {

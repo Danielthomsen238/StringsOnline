@@ -17,7 +17,7 @@ const StyledHome = styled.section`
   }
   section {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 2rem;

@@ -2,29 +2,32 @@ import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { StoreApi, useSearchApi } from "../../../helpers/useSearchApi";
 import { StyledItemDetail } from "../../../src/styles/styledComponents/StyledItemDetail";
 
-const Details = () => {
+const BrandDetails = () => {
   const router = useRouter();
   const [data, getData] = useState<any>();
+  const { searchApi } = useSearchApi() as StoreApi;
 
   useEffect(() => {
     axios
-      .get(`/api/item`, { params: { item: router.asPath } })
+      .get(`${searchApi}`)
       .then((response) => {
-        getData(response.data.data);
+        getData(response.data.item);
       })
       .catch((e) => {
         console.log(e);
       });
-  }, [router.asPath]);
+  }, [searchApi]);
+
   console.log(data);
   let splitStr;
   let specs;
   let newArr = [];
   if (data) {
     splitStr = data.description_long.split("Specifikationer");
-    if (splitStr.length > 0) {
+    if (splitStr.length < 0) {
       specs = splitStr[1].split(":");
 
       for (let i = 0; i < specs.length; i += 2) {
@@ -61,12 +64,11 @@ const Details = () => {
               <button>Læg i kurv</button>
             </div>
 
-            <p>{data.stock}+ På lager</p>
+            <p className="stock">{data.stock}+ På lager</p>
           </div>
         </StyledItemDetail>
       )}
     </>
   );
 };
-
-export default Details;
+export default BrandDetails;

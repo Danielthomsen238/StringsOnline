@@ -62,7 +62,12 @@ const Navbar = () => {
                 <p>+45 98 12 22 68</p>
               </div>
               <div className="basket">
-                <div className="basket_icon" />
+                {
+                  // eslint-disable-next-line @next/next/link-passhref
+                  <Link href="/cart">
+                    <div className="basket_icon" />
+                  </Link>
+                }
               </div>
             </div>
             <div className="search">

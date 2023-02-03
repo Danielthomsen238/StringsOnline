@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledProduct = styled.div`
   position: relative;
-  width: 560px;
+  width: 35vw;
   height: 401px;
   display: flex;
   border: solid 1px ${(props) => props.theme.colors.darkgrey};
@@ -18,7 +18,7 @@ const StyledProduct = styled.div`
   }
   .product_info {
     position: absolute;
-    right: 10px;
+    left: 220px;
     width: 60%;
     height: 90%;
     display: flex;
